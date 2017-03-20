@@ -59,6 +59,13 @@ See `example.lua` or `example.py` for a bigger example.
 
 ![](https://raw.github.com/szym/display/master/example.png)
 
+### Tunneling display to localhost
+In some cases, such as accessing a remote server using SSH (e.g. AWS, etc.) with a terminal interface, it is not possible to open a browser and navigate to localhost. Alternatively, we can _forward the port_ through SSH. For example, if the display server is running on port 8888 on the remote server, then you SSH using:
+
+    ssh -L 8000:localhost:8888 username@example.com
+
+Now, we can access the display server on our local machine on port 8000, or by navigating to `http://0.0.0.0:8000/`.
+
 ## <a name='usage'></a> Usage
 
 Each command creates a new window (pane) on the desktop that can be independently positioned, resized, maximized.
